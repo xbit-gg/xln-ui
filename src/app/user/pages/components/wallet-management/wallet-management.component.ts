@@ -60,7 +60,7 @@ export class WalletManagementComponent implements OnInit, AfterViewInit {
     this.isLoading = false;
     this.transactions = [];
     this.wallet = wallet;
-    if (wallet.latestTransaction.time !== "0") {
+    if (wallet.latestTransaction) {
       this.transactions.push(wallet.latestTransaction);
     }
     this.walletName.setValue(wallet.walletName);

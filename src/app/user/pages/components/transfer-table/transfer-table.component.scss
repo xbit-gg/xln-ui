@@ -1,0 +1,101 @@
+.table-container {
+  display: block;
+  overflow-x: auto;
+}
+
+table {
+  display: table;
+  width: 100%;
+  overflow-x: auto;
+}
+
+tr.mat-row {
+  cursor: pointer;
+}
+
+.filter {
+  padding-right: 4px;
+}
+
+.left-controls {
+  min-width: 50%;
+}
+@media only screen and (min-width: 900px) {
+  .left-controls {
+    min-width: 25%;
+  }
+}
+
+.right-controls {
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.mat-cell.no-data {
+  text-align: center;
+}
+
+.mat-column-from.mat-cell, .mat-column-to.mat-cell {
+  padding-left: 5px;
+  text-align: center;
+  width: 32px;
+}
+
+.mat-column-id.mat-cell {
+  padding-left: 36px;
+}
+
+:host ::ng-deep .mat-column-balance .mat-sort-header-container {
+  display: flex;
+  justify-content: right;
+}
+
+.mat-column-balance.mat-cell {
+  text-align: right;
+}
+
+.mat-row,
+.mat-header-row {
+  min-width: 100%;
+  display: table-row;
+  width: 100%;
+}
+
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 0 5px;
+  line-break: unset;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.loading-shade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-paginator {
+  width: 50%;
+}
+
+
+mat-paginator {
+  display: inline-block;
+  flex-grow: 1;
+}

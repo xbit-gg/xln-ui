@@ -45,11 +45,11 @@
     </ng-container>
     <ng-container matColumnDef="createdAt">
       <th mat-header-cell *matHeaderCellDef mat-sort-header=""> Created </th>
-      <td mat-cell *matCellDef="let row"> {{row.createdAt * 1000 | date}} </td>
+      <td mat-cell *matCellDef="let row"> {{row.creationTime | date}} </td>
     </ng-container>
     <ng-container matColumnDef="latestTransactionAt">
       <th mat-header-cell *matHeaderCellDef mat-sort-header=""> Last Transaction </th>
-      <td mat-cell *matCellDef="let row"> {{row.latestTransactionAt * 1000 | date: 'yy/M/d h:mm a'}}</td>
+      <td mat-cell *matCellDef="let row"> {{row.latestTransactionTime | date: 'yy/M/d h:mm a'}}</td>
     </ng-container>
 
     <!-- Row shown when there is no matching data. -->

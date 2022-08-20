@@ -77,8 +77,8 @@ export interface Wallet {
   id: string;
   name: string;
   balance: string;
-  createdAt: string;
-  latestTransactionAt: string;
+  creationTime: string;
+  latestTransactionTime: string;
 }
 
 export interface Transaction {
@@ -110,9 +110,10 @@ export interface GetWalletResponse {
   walletName: string;
   balance: string;
   apiKey: string;
-  createdAt: string;
+  creationTime: string;
   locked: boolean;
   latestTransaction: Transaction;
+  latestTransactionTime: string;
 }
 
 export interface GetTransactionsResponse {

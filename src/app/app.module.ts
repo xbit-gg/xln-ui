@@ -34,6 +34,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatTableExporterModule} from "mat-table-exporter";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatMenuModule} from '@angular/material/menu';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { WalletManagementComponent } from './user/pages/components/wallet-management/wallet-management.component';
@@ -66,6 +67,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { WalletSettingsComponent } from './wallet/pages/wallet-settings/wallet-settings.component';
 import { WalletBackButtonComponent } from './wallet/components/wallet-back-button/wallet-back-button.component';
 import { WalletScannerComponent } from './wallet/components/wallet-scanner/wallet-scanner.component';
+import { TransferTableComponent } from './user/pages/components/transfer-table/transfer-table.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +102,7 @@ import { WalletScannerComponent } from './wallet/components/wallet-scanner/walle
     WalletSettingsComponent,
     WalletBackButtonComponent,
     WalletScannerComponent,
+    TransferTableComponent,
   ],
     imports: [
         BrowserModule,
@@ -128,6 +131,7 @@ import { WalletScannerComponent } from './wallet/components/wallet-scanner/walle
         MatAutocompleteModule,
         MatButtonToggleModule,
         MatMenuModule,
+        MatCheckboxModule,
         CookieModule.forRoot(),
         FontAwesomeModule,
         ReactiveFormsModule,
