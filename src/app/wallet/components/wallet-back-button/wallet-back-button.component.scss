@@ -1,0 +1,18 @@
+
+:host {
+  z-index: 100;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+}
+
+button.back-button {
+  background: black;
+  box-shadow: 0 5px 10px #000;
+}
+
+@media only screen and (min-width: 900px) {
+  :host {
+    left: 25%;
+  }
+}

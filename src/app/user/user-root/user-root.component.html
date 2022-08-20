@@ -1,0 +1,23 @@
+<!-- Toolbar -->
+<xln-header role="banner" [sidenav]="sidenav">
+</xln-header>
+
+<mat-sidenav-container class="header-padding">
+
+  <mat-sidenav #sidenav class="header-padding"
+               [opened]="!browserClient.isSmallScreen()"
+               [mode]="browserClient.isSmallScreen() ? 'over' : 'side'">
+    <xln-sidenav [sidenav]="sidenav"></xln-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Main content -->
+    <div class="content" role="main">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Footer -->
+<footer>
+</footer>

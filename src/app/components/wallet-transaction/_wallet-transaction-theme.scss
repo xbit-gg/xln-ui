@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin wallet-transaction-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $foreground: map.get($color-config, foreground);
+
+  xln-wallet-transaction {
+    & .transaction-date {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+
+    & .transaction-label {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin panel-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+
+  $background: map.get($color-config, background);
+
+  $panel-background-color: mat.get-color-from-palette($background, dialog);
+  $panel-shadow-color: mat.get-color-from-palette($background, shadow);
+
+  xln-panel {
+    & .panel {
+      position: relative;
+      background-color: $panel-background-color;
+    }
+    & .panel:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      box-shadow: 0 10px 30px $panel-shadow-color;
+    }
+  }
+}

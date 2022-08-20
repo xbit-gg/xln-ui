@@ -1,0 +1,23 @@
+.loading {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanner {
+  background: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-text {
+  background: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+}

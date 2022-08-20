@@ -1,0 +1,26 @@
+<div *ngIf="!transferLoading && !transferDone" class="transfer-container">
+  <mat-form-field class="transfer-account" color="accent" appearance="standard">
+    <mat-label>To Wallet</mat-label>
+    <form autocomplete="off"> <!-- Prevent chrome from treating below field as password autocomplete -->
+      <input matInput type="text" [formControl]="transferWallet" [matAutocomplete]="auto">
+    </form>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let id of filteredWalletIds | async" [value]="id">{{id}}</mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field class="transfer-amount" color="accent" appearance="standard">
+    <mat-label>Amount (sat)</mat-label>
+    <input matInput [formControl]="transferAmount" type="number">
+  </mat-form-field>
+  <button mat-raised-button [disabled]="!(transferWallet.value && transferAmount.value)"
+          type="submit" class="transfer-button" color="accent" (click)="makeTransfer()">
+    Transfer
+  </button>
+</div>
+<div *ngIf="transferLoading" class="transfer-container loading">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+<div *ngIf="transferDone" class="transfer-container done">
+  <fa-icon *ngIf="transferSuccess" [icon]="successIcon" class="receive-color"></fa-icon>
+  <fa-icon *ngIf="!transferSuccess" [icon]="failureIcon" class="send-color"></fa-icon>
+</div>

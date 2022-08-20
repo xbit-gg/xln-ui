@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin latest-transactions-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+
+  $foreground: map.get($color-config, foreground);
+
+  xln-latest-transactions {
+    & .transaction-title, & .transaction {
+      border-bottom: 1px solid mat.get-color-from-palette($foreground, divider);
+    }
+
+    & .lightning-network {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+
+    & .transaction-date {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+  }
+
+}

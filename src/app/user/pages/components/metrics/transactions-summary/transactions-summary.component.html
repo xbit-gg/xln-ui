@@ -1,0 +1,20 @@
+<div class="chart-header">
+  <h1>Transactions</h1>
+  <div class="control-group">
+    <span class="interval-amount">
+      <button mat-stroked-button [disabled]="intervals[intervalType] === 1" (click)="decrementIntervals()">&lt;</button>
+      <span class="intervals">{{intervals[intervalType]}}</span>
+      <button mat-stroked-button (click)="incrementIntervals()">&gt;</button>
+    </span>
+    <span class="interval-toggle">
+      <button mat-stroked-button [disabled]="intervalType === 'day'" (click)="setIntervalType('day')">Days</button>
+      <button mat-stroked-button [disabled]="intervalType === 'week'" (click)="setIntervalType('week')">Weeks</button>
+      <button mat-stroked-button [disabled]="intervalType === 'month'" (click)="setIntervalType('month')">Months</button>
+    </span>
+
+  </div>
+</div>
+<div *ngIf="loading" class="loading">
+  <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+</div>
+<xln-chart [id]="'transactionSummaryChart'" [chartData]="chartData" (chartLoaded)="onChartLoaded($event)"></xln-chart>

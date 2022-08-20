@@ -1,0 +1,19 @@
+
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin wallet-root-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+  $background: map.get($color-config, 'background');
+  $foreground: map.get($color-config, 'foreground');
+
+  $background-color: mat.get-color-from-palette($background, background);
+  $text-color: mat.get-color-from-palette($foreground, text);
+
+  .wallet-root {
+    background: $background-color;
+    color: $text-color;
+  }
+
+}

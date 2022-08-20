@@ -1,0 +1,34 @@
+@import "../../../../styles";
+
+.content {
+  width: 250px;
+  padding-top: 24px;
+}
+
+.page {
+  padding: 6px 20px;
+  width: 100%;
+  border-radius: 0;
+  text-align: left;
+}
+
+.title {
+  padding-left: 12px;
+  font-weight: 500;
+}
+
+.title-text {
+  font-size: 15px;
+  padding-top: 4px;
+}
+
+.title-icon {
+  display: inline-block;
+  text-align: center;
+  min-width: 26px;
+  padding-right: 20px;
+}
+
+a {
+  text-decoration: none;
+}

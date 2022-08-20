@@ -1,0 +1,15 @@
+<div *ngIf="isLoading && !error" class="wallet-content">
+
+</div>
+
+<div *ngIf="!isLoading && !error" class="wallet-content">
+  <div class="wallet-header">
+    <button mat-icon-button (click)="openSettingsPage()" class="settings-button">
+      <fa-icon [icon]="this.settingsIcon"></fa-icon>
+    </button>
+    <h1 class="balance"><span class="balance-amount">{{wallet.balance | sat: true}}</span> sats</h1>
+  </div>
+  <div class="transactions" infiniteScroll (scrolled)="onScroll()">
+    <xln-wallet-transaction *ngFor="let tx of transactions" [tx]="tx" [walletId]="walletId"></xln-wallet-transaction>
+  <xln-wallet-action-panel></xln-wallet-action-panel>
+</div>

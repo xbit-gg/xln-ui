@@ -1,0 +1,39 @@
+.header {
+  box-shadow: 0 2px 5px #0000004d;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 16px;
+  position: fixed;
+  height: 56px;
+  z-index: 10;
+}
+
+.title {
+  align-self: center;
+  font-size: 36px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  line-height: 32px;
+  margin: auto;
+}
+
+.title-logo,
+.title-text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.title-text {
+  margin: -1px 0 0 -2px;
+}
+
+.left div {
+  display: inline-block;
+}
+
+.right div {
+  display: inline-block;
+}
+
+.left, .right {
+  min-width: 80px;
+}

@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin wallet-table-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+
+  $foreground: map.get($color-config, foreground);
+  $background: map.get($color-config, background);
+
+  xln-wallet-table {
+    & tbody tr:hover {
+      background: mat.get-color-from-palette($background, hover);
+    }
+    & tbody tr.selected {
+      background: mat.get-color-from-palette($background, hover);
+    }
+  }
+}

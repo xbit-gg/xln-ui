@@ -1,0 +1,34 @@
+.transfer-container mat-spinner {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.transfer-container {
+  margin: 36px auto;
+  width: 256px;
+  height: 256px;
+  text-align: center;
+}
+
+.transfer-container mat-form-field {
+  width: 100%;
+}
+
+.transfer-button {
+  margin-top: 24px;
+}
+
+fa-icon {
+  font-size: 200px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+

@@ -1,0 +1,6 @@
+<div *ngIf="isLoading" class="loading">
+  <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+</div>
+<div class="chart-container">
+  <canvas #chart [attr.id]="id"></canvas>
+</div>

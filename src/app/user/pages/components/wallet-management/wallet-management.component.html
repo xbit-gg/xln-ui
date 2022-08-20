@@ -1,0 +1,63 @@
+<div *ngIf="!hasWallet" class="no-wallet">
+  <h2>No wallet selected</h2>
+  <p>Please select a wallet in the table</p>
+</div>
+<div *ngIf="hasWallet && isLoading" class="loading">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+<div *ngIf="hasWallet && error" class="no-wallet">
+  <h2>Unable to load wallet data</h2>
+  <p>{{error}}</p>
+</div>
+<div *ngIf="hasWallet && !isLoading && !error">
+  <div class="header">
+    <div class="row">
+      <div class="wallet-data">
+        <div *ngIf="!isEditingName" class="wallet-name">
+          <h1>
+            {{wallet.walletName}}
+          </h1>
+          <button mat-icon-button (click)="editName()" class="edit-name-button">
+            <fa-icon [icon]="editNameIcon"></fa-icon>
+          </button>
+        </div>
+        <div *ngIf="isEditingName" class="wallet-name">
+          <mat-form-field color="accent" appearance="standard" class="edit-name-input">
+            <input [formControl]="walletName" matInput>
+          </mat-form-field>
+          <button mat-icon-button class="edit-name-button" (click)="setName()" [disabled]="!walletName.value">
+            <fa-icon [icon]="saveNameIcon"></fa-icon>
+          </button>
+        </div>
+        <p class="wallet-id">{{wallet.walletId}}</p>
+      </div>
+      <button class="wallet-open" mat-button color="accent" (click)="openWallet()">
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+    </div>
+    <div class="row">
+      <h3><span class="sats">{{wallet.balance | sat: true}}</span> sats</h3>
+      <mat-slide-toggle class="wallet-lock" [checked]="locked" (toggleChange)="toggleWalletLock()" matTooltip="Prevent wallet from making transactions">
+        Locked
+      </mat-slide-toggle>
+    </div>
+  </div>
+  <div class="content">
+    <mat-tab-group color="accent" class="wallet-tabs">
+      <mat-tab label="Deposit">
+        <div class="qr-code"></div>
+      </mat-tab>
+      <mat-tab label="Withdraw">
+        <div class="qr-code"></div>
+      </mat-tab>
+      <mat-tab label="Transfer">
+        <xln-transfer [walletId]="this.wallet.walletId" (onTransfer)="onTransfer($event)"></xln-transfer>
+      </mat-tab>
+    </mat-tab-group>
+    <h2 class="transaction-title">Transactions</h2>
+    <xln-wallet-transaction *ngFor="let tx of transactions" [tx]="tx" [walletId]="wallet.walletId"></xln-wallet-transaction>
+    <div class="more-transactions">
+      <button mat-button (click)="getMoreTransactions(5)">Load more</button>
+    </div>
+  </div>
+</div>

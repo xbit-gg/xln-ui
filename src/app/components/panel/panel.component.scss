@@ -1,0 +1,13 @@
+@import "../../../styles";
+
+.panel, .panel:before {
+  padding: 16px;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+@media only screen and (min-width: 900px) {
+  .panel, .panel:before {
+    border-radius: 10px;
+  }
+}

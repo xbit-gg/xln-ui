@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.login-container {
+  padding-top: 100px;
+  margin: auto;
+  max-width: 600px;
+}
+
+.api-key-input {
+  display: block;
+}
+
+.login-button-container {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.qr-code {
+  height: 256px;
+  width: 256px;
+  background: gray;
+  margin: auto;
+}
+
+.alt-login-method {
+  padding: 16px 0 0 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}

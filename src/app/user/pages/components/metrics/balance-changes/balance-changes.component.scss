@@ -1,0 +1,39 @@
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-group {
+    text-align: right;
+}
+
+.interval-amount {
+  max-width: 100px;
+  padding-right: 8px;
+}
+
+.interval-amount button {
+  line-height: 24px;
+  padding: 0 4px;
+  min-width: 0;
+}
+
+.intervals {
+  padding: 0 4px;
+}
+
+.interval-toggle button {
+  line-height: 24px;
+  padding: 0 4px;
+  min-width: 0;
+  border-radius: 0;
+}
+
+.interval-toggle button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.interval-toggle button:last-child {
+  border-radius: 0 4px 4px 0;
+}

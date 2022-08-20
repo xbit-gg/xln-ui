@@ -1,0 +1,103 @@
+.table-container {
+  display: block;
+  overflow-x: auto;
+}
+
+table {
+  display: table;
+  width: 100%;
+  overflow-x: auto;
+}
+
+tr.mat-row {
+  cursor: pointer;
+}
+
+.filter {
+  padding-right: 4px;
+}
+
+.left-controls {
+  min-width: 50%;
+}
+@media only screen and (min-width: 960px) {
+  .left-controls {
+    min-width: 25%;
+  }
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+button {
+  align-self: center;
+}
+@media only screen and (min-width: 960px) {
+  button {
+    margin-right: 20px;
+  }
+}
+
+.mat-cell.no-data {
+  text-align: center;
+}
+
+:host ::ng-deep .mat-column-amount .mat-sort-header-container {
+  display: flex;
+  justify-content: right;
+}
+
+.mat-column-amount.mat-cell {
+  text-align: right;
+}
+
+:host ::ng-deep .mat-column-feesPaid .mat-sort-header-container {
+  display: flex;
+  justify-content: right;
+}
+
+.mat-column-feesPaid.mat-cell {
+  text-align: right;
+}
+
+.mat-row,
+.mat-header-row {
+  min-width: 100%;
+  display: table-row;
+  width: 100%;
+}
+
+.mat-cell,
+.mat-header-cell {
+  word-wrap: initial;
+  display: table-cell;
+  padding: 0 5px;
+  line-break: unset;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.loading-shade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-paginator {
+  width: 50%;
+}
+
+mat-paginator {
+  display: inline-block;
+  flex-grow: 1;
+}

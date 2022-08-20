@@ -1,0 +1,37 @@
+.transaction {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+}
+
+.transaction-title {
+  margin-bottom: 0;
+}
+
+.transaction .transaction-icon {
+  width: 20px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction-participants p {
+  margin-bottom: 0;
+}
+
+.transaction-shape {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.transaction-shape fa-icon {
+  padding: 10px 10px 0 0;
+}
+
+.transaction-details p {
+  text-align: right;
+  margin-bottom: 0;
+}

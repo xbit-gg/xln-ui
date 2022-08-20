@@ -1,0 +1,20 @@
+<div class="transaction">
+    <div class="transaction-shape">
+      <fa-icon [icon]="transactionIcon(tx)" 
+                [ngClass]="tx.toWallet === walletId ? 'receive-color' : 'send-color'"
+                class="transaction-icon"
+                style="color: #15daa4"></fa-icon>
+      <div class="transaction-participants">
+        <p *ngIf="tx.fromWallet === walletId" class="wallet-id">{{tx.toWallet}}</p>
+        <p *ngIf="tx.toWallet === walletId" class="wallet-id">{{tx.fromWallet}}</p>
+        <p *ngIf="!tx.fromWallet" class="lightning-network"><i>Lightning Network</i></p>
+        <p *ngIf="!tx.toWallet" class="lightning-network"><i>Lightning Network</i></p>
+        <p class="transaction-label">Icecream</p>
+      </div>
+    </div>
+    <div class="transaction-details">
+      <p *ngIf="tx.toWallet === walletId" class="receive-color">+{{tx.amount | sat: true}}</p>
+      <p *ngIf="tx.fromWallet === walletId" class="send-color">-{{tx.amount | sat: true}}</p>
+      <p class="transaction-date">{{tx.time | date: 'yy/M/d h:mm a'}}</p>
+    </div>
+</div>

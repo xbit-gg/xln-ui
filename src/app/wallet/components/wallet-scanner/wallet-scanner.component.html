@@ -1,0 +1,16 @@
+<xln-wallet-back-button></xln-wallet-back-button>
+<div class="scanner">
+  <div *ngIf="isLoading" class="loading">
+    <mat-spinner mode="indeterminate" color="accent"></mat-spinner>
+  </div>
+  <zxing-scanner id="scanner" [formats]="SCANNER_FORMATS"
+                (scanSuccess)="scanSuccess($event)"
+                (scanError)="scanError($event)"
+                (scanComplete)="onScan()"
+                style="display: none">
+  </zxing-scanner>
+</div>
+<div class="bottom-text">
+  <p>Scan lightning invoice</p>
+</div>
+

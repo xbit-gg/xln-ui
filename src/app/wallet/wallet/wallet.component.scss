@@ -1,0 +1,45 @@
+.wallet-content {
+  margin: auto;
+  padding: 16px;
+}
+
+.wallet-content h1 {
+  text-align: center;
+}
+
+.balance {
+  padding: 72px 0 56px;
+  font-size: 28px;
+  color: #15daa4;
+}
+
+.balance-amount {
+  font-weight: 500;
+  text-shadow: 1px 1px 2px #15daa4;
+}
+
+.settings-button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: black;
+  box-shadow: 0 5px 10px #000;
+  //box-shadow: 0 5px 30px #000;
+}
+
+@media only screen and (min-width: 900px) {
+  .wallet-content {
+    width: 50%;
+  }
+
+  .settings-button {
+    right: 25%;
+  }
+}
+
+xln-wallet-action-panel {
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+}

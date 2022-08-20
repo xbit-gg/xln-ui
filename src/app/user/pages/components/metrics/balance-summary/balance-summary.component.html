@@ -1,0 +1,9 @@
+<h1>&#8383; <span class="sats">{{totalBalance | bitcoin}}</span></h1>
+<div class="chart-header">
+  <h4>Wallet Balances</h4>
+  <div class="control-group">
+    <mat-slide-toggle (toggleChange)="onLogScaleToggle()">Log Scale</mat-slide-toggle>
+    <mat-slide-toggle (toggleChange)="onEmptyToggle()">Show Empty</mat-slide-toggle>
+  </div>
+</div>
+<xln-chart [id]="'balanceSummaryChart'" [chartData]="chartData" (chartLoaded)="onChartLoaded($event)"></xln-chart>

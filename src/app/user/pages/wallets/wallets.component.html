@@ -1,0 +1,8 @@
+<xln-page [title]="'Manage Wallets'">
+  <xln-panel fxFlex="100" fxFlex.gt-lg="67">
+    <xln-wallet-table #walletTable></xln-wallet-table>
+  </xln-panel>
+  <xln-panel fxFlex="100" fxFlex.gt-lg="33">
+    <xln-wallet-management [walletTable]="walletTable"></xln-wallet-management>
+  </xln-panel>
+</xln-page>

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin transaction-table-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+
+  $foreground: map.get($color-config, foreground);
+
+  xln-transaction-table {
+    & .lightning-network {
+      color: mat.get-color-from-palette($foreground, disabled-text);
+    }
+  }
+}

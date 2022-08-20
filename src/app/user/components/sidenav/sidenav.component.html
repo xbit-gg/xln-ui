@@ -1,0 +1,9 @@
+<div class="content">
+  <button mat-button *ngFor="let page of pages" class="page"
+          routerLink="{{page.path}}"
+          (click)="onPageClick()"
+          [ngClass]="{'selected': isSelected(page.path)}">
+    <span class="title-icon"><fa-icon [icon]="page.icon"></fa-icon></span>
+    <span class="title-text">{{page.title}}</span>
+  </button>
+</div>

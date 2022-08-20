@@ -1,0 +1,29 @@
+<xln-header role="banner" [decorative]="true"></xln-header>
+<div class="login-container">
+  <xln-panel>
+    <div *ngIf="textLogin" class="text-login">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field class="api-key-input" color="accent" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input type="text" formControlName="username" matInput>
+        </mat-form-field>
+        <mat-form-field class="api-key-input" color="accent" appearance="fill">
+          <mat-label>API Key</mat-label>
+          <input type="password" formControlName="apiKey" matInput>
+        </mat-form-field>
+        <div class="login-button-container">
+          <button mat-raised-button type="submit" class="login-button" color="accent" [disabled]="loginForm.invalid">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="!textLogin" class="qr-login">
+      <div class="qr-code"></div>
+    </div>
+  </xln-panel>
+  <a class="alt-login-method" (click)="toggleLoginMethod()">
+    <span *ngIf="textLogin">Login with QR code</span>
+    <span *ngIf="!textLogin">Login with API key</span>
+  </a>
+</div>

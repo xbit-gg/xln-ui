@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin user-login-theme($theme) {
+  // Get the color config from the theme.
+  $color-config: mat.get-color-config($theme);
+  $background: map.get($color-config, 'background');
+  $foreground: map.get($color-config, 'foreground');
+
+  $background-color: mat.get-color-from-palette($background, background);
+  $text-color: mat.get-color-from-palette($foreground, text);
+  $panel-shadow-color: mat.get-color-from-palette($background, shadow);
+
+  xln-user-login {
+    background: $background-color;
+    color: $text-color;
+  }
+
+  xln-user-login .login-container {
+    max-height: 15px;
+  }
+
+  xln-panel .panel {
+    box-shadow: 0 10px 30px $panel-shadow-color;
+  }
+
+}
